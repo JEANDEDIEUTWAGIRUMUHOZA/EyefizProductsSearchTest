@@ -5,21 +5,27 @@ Front-end
       On va afficher les produits d’une manière aléatoire.
 
 
-ETAPES
+AVANCEMENT DU PROJET
 
-Etape1 : J’ai crée mon projet Laravel
+Etape : J’ai crée mon projet Laravel
 
          composer create-project --prefer-dist laravel/laravel:^6.0 TestEyefiz
 
-Etape2 : J’ai crée un dossier products dans Ressources/Views
+Etape : J’ai crée un dossier products dans Ressources/Views
 
         A l’intérieur de ce dossier je crée une vue(page) index.blade.php pour afficher l’accueil de notre  
         Boutique. Pour se faire j’utilise Bootstrap pour faciliter le design de la page. Il faudra noter que je 
         ne me suis concentré beaucoup sur le design du frond-end.
         
-Etape3 : Je crée un Controller pour product envie d’afficher la vue index.blade.php
+Etape : Je crée un Controller pour product envie d’afficher la vue index.blade.php
 
          php artisan make:controller ProductController
+         
+         A l’intérieur de ce controller je crée une fonction index pour renvoyer la vue en question
+         
+ Etapes  : Création de route GET pour la page index.blade.php qui sera l'accès à la boutique
+ 
+            Route::get('/boutique','ProductController@index');
          
          
 
