@@ -30,6 +30,26 @@ Etape : Je crée un Controller pour product envie d’afficher la vue index.blad
  Etape: Création de model Product pour stocker nos produits, je n'oublie pas le drapeau -m pour ajouter les migrations
  
            php artisan make:model Product -m
+           
+           Les migrations sont accessibles dans le dossier database/migrations
+           Une fois le model crée, j'ajoute des champs/olonnes dans notre table des produits
+
+           
+           
+  Etape: Création de base de données pour stocker nos données
+           
+      Dans le fichier .env:  fichier qui contient les variables d’environnement de l’application.
+      
+      J'affecte le nom de ma base de données créée avec phpmyadmin à ma variable DB_DATABASE
+      
+      Nom de ma base de données: 
+      
+                       eyefiztest
+      
+      Puis j’applique les migrations avec:
+      
+                     php artisan migrate
+
             
     
          
