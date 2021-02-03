@@ -49,6 +49,15 @@ Etape : Je crée un Controller pour product envie d’afficher la vue index.blad
       Puis j’applique les migrations avec:
       
                      php artisan migrate
+                     
+                     
+                     
+   Etape : création des seeders pour peupler notre base de données
+
+            php artisan make :seeder ProductsTableSeeder
+            
+          
+
 
             
     
