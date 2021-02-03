@@ -23,9 +23,15 @@ Etape : Je crée un Controller pour product envie d’afficher la vue index.blad
          
          A l’intérieur de ce controller je crée une fonction index pour renvoyer la vue en question
          
- Etapes  : Création de route GET pour la page index.blade.php qui sera l'accès à la boutique
+ Etape  : Création de route GET pour la page index.blade.php qui sera l'accès à la boutique
  
             Route::get('/boutique','ProductController@index');
+            
+ Etape: Création de model Product pour stocker nos produits, je n'oublie pas le drapeau -m pour ajouter les migrations
+ 
+           php artisan make:model Product -m
+            
+    
          
          
 
