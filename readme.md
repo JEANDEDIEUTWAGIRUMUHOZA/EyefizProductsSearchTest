@@ -57,10 +57,13 @@ Etape : Je crée un Controller pour product envie d’afficher la vue index.blad
             php artisan make :seeder ProductsTableSeeder
             
           
+Etape : Peupler notre base de données  : 
 
+          Utilisation de faker
+         
+         Puis:
+              php artisan db :seed
 
-            
-    
          
          
 
