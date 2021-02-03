@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*get route to display the index.blade.php vue 
+by calling index function in ProductController*/
+
+Route::get('/boutique','ProductController@index');
