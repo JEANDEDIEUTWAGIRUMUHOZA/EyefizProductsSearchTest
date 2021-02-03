@@ -1,3 +1,36 @@
+PROJET TEST LARAVEL BARRE DE RECHERCHE PRODUITS 
+
+Front-end
+ 
+      On va afficher les produits d’une manière aléatoire.
+
+
+ETAPES
+
+Etape1 : J’ai crée mon projet Laravel
+
+         composer create-project --prefer-dist laravel/laravel:^6.0 TestEyefiz
+
+Etape2 : J’ai crée un dossier products dans Ressources/Views
+
+        A l’intérieur de ce dossier je crée une vue(page) index.blade.php pour afficher l’accueil de notre  
+        Boutique. Pour se faire j’utilise Bootstrap pour faciliter le design de la page. Il faudra noter que je 
+        ne me suis concentré beaucoup sur le design du frond-end.
+        
+Etape3 : Je crée un Controller pour product envie d’afficher la vue index.blade.php
+
+         php artisan make:controller ProductController
+         
+         
+
+
+
+
+
+
+
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
