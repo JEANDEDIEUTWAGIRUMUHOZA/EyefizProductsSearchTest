@@ -15,7 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*get route to display the index.blade.php vue 
+/*GET route to display the index.blade.php vue 
 by calling index function in ProductController*/
 
-Route::get('/boutique','ProductController@index');
+Route::get('/boutique','ProductController@index')->name('products.index');
+
+/* GET route to show a product details when clicked */
+
+Route::get('/boutique{slug}', 'ProductController@show')->name('products.show');
