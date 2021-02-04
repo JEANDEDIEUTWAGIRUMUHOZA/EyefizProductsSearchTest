@@ -44,5 +44,23 @@ class ProductController extends Controller
        return view('products.show')->with('product', $product);
 
     }
+
+    //function for search
+
+    public function search(){
+        //$q will be the character typed into search form
+        $q = request()->input('q');
+        //dd($q);
+
+        //check how we coul include the search with category
+        //search with eloquant
+
+        $products = Product::where('title', 'like', "%$q%")
+               //->orWhere('description', 'like', "%$q%")
+               
+               ->paginate(9);
+
+            return view('products.search')->with('products', $products);
+    }
     
 }

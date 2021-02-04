@@ -20,6 +20,7 @@ by calling index function in ProductController*/
 
 Route::get('/boutique','ProductController@index')->name('products.index');
 
-/* GET route to show a product details when clicked */
+/* products routes */
 
 Route::get('/boutique{slug}', 'ProductController@show')->name('products.show');
+Route::get('/search', 'ProductController@search')->name('products.search');
