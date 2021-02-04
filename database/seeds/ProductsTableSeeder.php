@@ -24,9 +24,9 @@ class ProductsTableSeeder extends Seeder
          our migrations table fields for data consistency*/
 
             Product::create([
-            'title'=>$faker->sentence(15),
+            'title'=>$faker->sentence(4),
             'slug'=>$faker->slug,
-            'subtitle'=>$faker->sentence(10),
+            'subtitle'=>$faker->sentence(5),
             'description'=>$faker->text,
             'price'=>$faker->numberBetween(15, 300) * 100,//price in cents
             'image'=>'https://via.placeholder.com/200x250'
