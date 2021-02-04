@@ -14,5 +14,16 @@ class ProductController extends Controller
         // dd($products);/test 6 products random display, then we inject them in our vue
         return view('products.index')->with('products', $products);
     }
+
+
+    //function for showing a product details when clicked
+
+    public function show($slug)
+    {
+       $product = Product::where('slug', $slug)->firstOrFail();//or fail to get 404 error when slug not found
+
+       return view('products.show')->with('product', $product);
+
+    }
     
 }
