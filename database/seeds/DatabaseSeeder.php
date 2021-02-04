@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+         //must create categories, cause products will be linked to the categories
+        $this->call(CategoriesTableSeeder::class);
         //to populate our table after $faker fields creation
         $this->call(ProductsTableSeeder::class);
     }

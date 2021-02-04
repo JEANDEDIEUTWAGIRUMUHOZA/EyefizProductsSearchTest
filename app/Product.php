@@ -13,4 +13,10 @@ class Product extends Model
 
         return number_format($price, 2, ',', ' ') . ' €';
     }
+
+   //Relation many to many, a product has many categories
+    public function categories()
+    {
+      return $this->belongsToMany('App\Category');
+    }
 }

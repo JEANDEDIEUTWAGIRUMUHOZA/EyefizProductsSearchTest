@@ -10,7 +10,26 @@ class ProductController extends Controller
     public function index()
     {
         //display randomly 6 products
-        $products = Product::inRandomOrder()->take(9)->get();
+        //$products = Product::inRandomOrder()->take(9)->get();
+
+       /*to get exact category of a product
+       if a request has categorie
+       */
+
+       if(request()->categorie){
+       
+          //dd('OK CATEGORY');
+          $products = Product::with('categories')->whereHas('categories', function($query){
+              $query->where('slug', request()->categorie);
+          })->paginate(9);
+
+       }else{
+
+        //return our random paginated products paginate
+
+        $products = Product::with('categories')->paginate(9);
+       }
+        
         // dd($products);/test 6 products random display, then we inject them in our vue
         return view('products.index')->with('products', $products);
     }
