@@ -3,6 +3,6 @@
 <input type="text" name="q" class="form-control" placeholder="produit ou categorie">
 </div>
 
-<button type="submit" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i>Chercher</button>
+<button type="submit" class="btn btn-info">Chercher</button>
 
 </form>

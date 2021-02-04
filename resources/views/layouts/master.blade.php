@@ -58,12 +58,15 @@
       </div>
       <div class="col-4 text-center">
         <a class="blog-header-logo text-dark" href="{{ route('products.index') }}">EyefizBoutique</a>
+        
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center">
       @include('partials.search')
-      
-        {{-- <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a> --}}
-      
+     
+      </div>
+
+      <div>
+      <a class="btn btn-sm btn-outline-secondary" href="#">Compte</a>
       </div>
     </div>
   </header>
