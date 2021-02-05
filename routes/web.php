@@ -24,3 +24,6 @@ Route::get('/boutique','ProductController@index')->name('products.index');
 
 Route::get('/boutique{slug}', 'ProductController@show')->name('products.show');
 Route::get('/search', 'ProductController@search')->name('products.search');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

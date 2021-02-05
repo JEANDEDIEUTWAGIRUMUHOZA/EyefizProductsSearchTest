@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -32,8 +34,12 @@ class ProductController extends Controller
         
         // dd($products);/test 6 products random display, then we inject them in our vue
         return view('products.index')->with('products', $products);
-    }
 
+      /*  for($i=0;i=5;$i++){
+            echo $i;
+       }*/
+    }
+  
 
     //function for showing a product details when clicked
 
@@ -55,6 +61,7 @@ class ProductController extends Controller
         //check how we coul include the search with category
         //search with eloquant
 
+        //$products = Product::where('title', 'like', "%$q%")
         $products = Product::where('title', 'like', "%$q%")
                //->orWhere('description', 'like', "%$q%")
                
