@@ -16,6 +16,7 @@
           <h6 class="mb-0">{{$product->title}}</h6>
           <div class="mb-1 text-muted">{{$product->created_at->format('d/m/Y')}}</div>
           <p class="mb-auto">{{$product->subtitle}}</p>
+          <p class="mb-auto">{{$product->type}}</p>
           <strong class="mb-auto">{{$product->getPrice()}}</strong>
           <a href="{{route('products.show', $product->slug)}}" class="stretched-link btn btn-info">Voir ce produit</a>
         </div>

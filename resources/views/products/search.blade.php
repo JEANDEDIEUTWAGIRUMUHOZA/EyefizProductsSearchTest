@@ -6,6 +6,8 @@
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
+        <h6 class="mb-0">Search page</h6>
+
           <small class="d-inline-block mb-2 text-success">
           @foreach($product->categories as $category)
 
@@ -13,6 +15,7 @@
 
           @endforeach
           </small>
+         
           <h6 class="mb-0">{{$product->title}}</h6>
           <div class="mb-1 text-muted">{{$product->created_at->format('d/m/Y')}}</div>
           <p class="mb-auto">{{$product->subtitle}}</p>
