@@ -26,13 +26,13 @@ class ProductController extends Controller
           //dd('OK CATEGORY');
           $products = Product::with('categories')->whereHas('categories', function($query){
               $query->where('slug', request()->categorie);
-          })->paginate(9);
+          })->orderBy('created_at', 'DESC')->paginate(9);
 
        }else{
 
         //return our random paginated products paginate
 
-        $products = Product::with('categories')->paginate(9);
+        $products = Product::with('categories')->orderBy('created_at', 'DESC')->paginate(9);
        }
 
         

@@ -12,7 +12,8 @@
         "fideloper/proxy": "^4.0",
         "hardevine/shoppingcart": "^2.9",
         "laravel/framework": "^6.0",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "tcg/voyager": "^1.4"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
@@ -59,5 +60,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
+    },
+    "repositories": {
+        "hooks": {
+            "type": "composer",
+            "url": "https://larapack.io"
+        }
     }
 }

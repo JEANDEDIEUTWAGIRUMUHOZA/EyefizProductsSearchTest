@@ -35,3 +35,8 @@ Route::post('/panier/ajouter','CartController@store')->name('cart.store');
 
 
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

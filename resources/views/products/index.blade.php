@@ -18,10 +18,11 @@
           <p class="mb-auto">{{$product->subtitle}}</p>
           <p class="mb-auto">{{$product->type}}</p>
           <strong class="mb-auto">{{$product->getPrice()}}</strong>
-          <a href="{{route('products.show', $product->slug)}}" class="stretched-link btn btn-info">Voir ce produit</a>
+          <a href="{{route('products.show', $product->slug)}}" class="stretched-link btn btn-success">Voir ce produit</a>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <img src="{{$product->image}}" alt="">
+         
+          <img src="{{ asset('storage/'. $product->image)}}" alt="">
         </div>
       </div>
     </div>
