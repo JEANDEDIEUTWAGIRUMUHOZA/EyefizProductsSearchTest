@@ -27,3 +27,11 @@ Route::get('/search', 'ProductController@search')->name('products.search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*Cart Routes */
+
+Route::post('/panier/ajouter','CartController@store')->name('cart.store');
+
+
+
+

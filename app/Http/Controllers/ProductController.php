@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
+use Cart;
 
 class ProductController extends Controller
 {
     //function to display the view index.blade.php
     public function index()
     {
+
+        //dd(Cart::content());
         //display randomly 6 products
         //$products = Product::inRandomOrder()->take(9)->get();
 
