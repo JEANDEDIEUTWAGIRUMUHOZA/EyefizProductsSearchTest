@@ -31,6 +31,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 /*Cart Routes */
 
 Route::post('/panier/ajouter','CartController@store')->name('cart.store');
+Route::patch('/panier/{rowId}', 'CartController@update')->name('cart.update');
+Route::delete('/panier/{rowId}', 'CartController@destroy')->name('cart.destroy');
 
 
 

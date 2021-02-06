@@ -5,17 +5,11 @@ use Illuminate\Http\Request;
 //use Gloudemans\Http\Shoppingcart\Facades\Cart;
 use Cart;
 
+
+use App\Product;
 class CartController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+ 
 
     /**
      * Show the form for creating a new resource.
@@ -35,15 +29,20 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //add our product to the cart
-        //dd($request->id, $request->title, $request->price);
+        $duplicata = Cart::search(function ($cartItem, $rowId) use ($request) {
+            return $cartItem->id == $request->product_id;
+        });
 
-        Cart::add($request->id,$request->title, 1, $request->price)
-             ->associate('App\Product');
-            
-        return redirect()->route('products.index')->with('success','Le produit a bien éte ajouté.');
+        if ($duplicata->isNotEmpty()) {
+            return redirect()->route('products.index')->with('success', 'Le produit a déjà été ajouté.');
+        }
 
-        
+        $product = Product::find($request->product_id);
+
+        Cart::add($product->id, $product->title, 1, $product->price)
+            ->associate('App\Product');
+
+        return redirect()->route('products.index')->with('success', 'Le produit a bien été ajouté.');
     }
 
     /**
@@ -75,10 +74,7 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+   
 
     /**
      * Remove the specified resource from storage.
@@ -86,8 +82,10 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($rowId)
     {
-        //
+        Cart::remove($rowId);
+
+        return back()->with('success', 'Le produit a été supprimé.');
     }
 }
