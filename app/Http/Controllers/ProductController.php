@@ -31,13 +31,14 @@ class ProductController extends Controller
 
         $products = Product::with('categories')->paginate(9);
        }
+
         
         // dd($products);/test 6 products random display, then we inject them in our vue
-        return view('products.index')->with('products', $products);
+          return view('products.index')->with('products', $products);
 
-      /*  for($i=0;i=5;$i++){
-            echo $i;
-       }*/
+          // return view('products.search')->with('products', $products);
+
+      
     }
   
 
@@ -51,23 +52,63 @@ class ProductController extends Controller
 
     }
 
+
+
     //function for search
 
-    public function search(){
-        //$q will be the character typed into search form
+    public function search(){ 
+
         $q = request()->input('q');
+      /*
+        if(request()->q){
+   
+            //dd('OK CATEGORY');
+            $products = Product::with('categories')->whereHas('categories', function($query){
+            $query->where('name', request()->q);
+            //$query->where('slug', request()->categorie);
+            //$products = Product::where('title', 'like', "%$q%")
+            
+        })->paginate(9);
+        return view('products.search')->with('products', $products);
+
+        }else{*/
+
+            //$q will be the character typed into search form
+        //$q = request()->input('q');
         //dd($q);
 
-        //check how we coul include the search with category
+        //check how we could include the search with category
         //search with eloquant
 
         //$products = Product::where('title', 'like', "%$q%")
-        $products = Product::where('title', 'like', "%$q%")
+       // $products = Product::with('categories')->where('title', 'like', "%$q%")
                //->orWhere('description', 'like', "%$q%")
-               
-               ->paginate(9);
+               $products = Product::where('title', 'like', "%$q%")
+               ->orWhere('description', 'like', "%$q%")
+               ->orWhere('type','like', "%$q%")
+              /* ->orWhereHas('category_product', function($q) use
+               ($id){ $q->where('category_product', '=', $id); })->get()->with('products', $products);
+               //Stack query proposal
 
+               /*$results = Profile::where('location_id', '=', $locationId) 
+               ->whereHas('services', function($query) use
+                ($serviceId){ $query->where('services.id', '=', $serviceId); })->get();
+                */
+
+             /*$products = Product::where('category.id', '=', $id) 
+               ->whereHas('category_product', function($q) use
+                ($id){ $q->where('category_product', '=', $id); })->get();*/
+                
+                ->paginate(9);
+
+        //$categories = Category::where('name', 'like', "%$q")
             return view('products.search')->with('products', $products);
+
+           // return view('products.search')->with('products', $products,'categories', $categories);
+
+        
+        
     }
+
     
 }
