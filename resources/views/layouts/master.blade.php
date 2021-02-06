@@ -71,12 +71,17 @@
     </div>
   </header>
 
+  
+      
+
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
      @foreach(App\Category::all() as $category)
      
-     <a class="p-2 text-muted" href="{{ route('products.index', ['categorie' => 
+     <a class="nav-link " href="{{ route('products.index', ['categorie' => 
      $category->slug  ]) }}">{{ $category->name }}</a>
+
+     
 
      @endforeach
     
