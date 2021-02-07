@@ -1,11 +1,15 @@
 PROJET TEST LARAVEL BARRE DE RECHERCHE PRODUITS 
 
+
+AVANCEMENT DU PROJET
+
+
 Front-end
  
       On va afficher les produits d’une manière aléatoire.
 
 
-AVANCEMENT DU PROJET
+
 
 Etape : J’ai crée mon projet Laravel
 
@@ -52,7 +56,7 @@ Etape : Je crée un Controller pour product envie d’afficher la vue index.blad
                      
                      
                      
-   Etape : création des seeders pour peupler notre base de données
+Etape : création des seeders pour peupler notre base de données
 
             php artisan make :seeder ProductsTableSeeder
             
@@ -67,7 +71,7 @@ Etape : Peupler notre base de données  :
          
          
 
-  Etape : Afficher nos produits sur la page
+ Etape : Afficher nos produits sur la page
   
                 Dans index.blade.php
                 On boucle sur la table
