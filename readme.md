@@ -67,6 +67,90 @@ Etape : Peupler notre base de données  :
          
          
 
+  Etape : Afficher nos produits sur la page
+  
+                Dans index.blade.php
+                On boucle sur la table
+
+Etape : création des catégories
+
+          On va fait un model
+          
+          php artisan make :model Category –m (le drapeau –m pour les migrations)
+          
+          Retrouver le model dans database/migrations
+
+Etape : Création d’une table pivot pour stocker les clés étrangères des produits et des catégories
+
+            php artisan make :migration create_category_product_table - -create=category_product         
+
+Etape : Création d’un seeder  pour les fausses catégories, car jusqu’à mena on a que des fausses données pour les produits
+
+           php artisan make :seeder CategoriesTableSeeder(à retrouver dans database/seeds)
+
+
+Etape : Recherche des produits
+
+     Implémentation des requete SQL Regarder dans le fichier ProductController
+     
+     Et la vue search.blade.php
+
+Etape : Authentification
+
+    Composer require laravel/ui => cette fonctionne pas  depuis laravel 6
+    
+    Ce qui fonctionne : composer require laravel/ui="1.*" –dev
+    
+    Puis  faire php artisan ui vu –auth
+    
+    ET npm install pour installer les librairie front-end
+
+
+Etape : Panier
+
+     Installation du librairie form GitHub
+     https://github.com/hardevine/LaravelShoppingcart
+
+    Pourquoi ? Ca nous facilite la tache d’écrire toute la logique
+
+Etape : administration avec Voyager
+
+    Lien documentation : https://voyager-docs.devdojo.com/getting-started/installation
+    
+    Intaller voyager : composer require tcg/voyager
+    
+    Ensuite il faut publier les assetes et migrer les models dont  «Category »
+    
+    Préciser notre APP_URL= http://localhost
+    
+    Puis php artisan voyager:install
+    
+    Accès dmin : localhost :8000/admin
+    
+    Créer un utilisateur : php artisan voyager:exemple mail:admin@admin.com, pass: admin ( à ne pas faire si on va le déployer en production)
+
+ Dans Voyager dashboard
+ 
+    BREAD : CRUD avec Voyager, on ajoute bread pour chaque entité, une icône, ouis on peut passer sur l’étape de création de relationship.
+
+    Editer side bar(des tools..) : aller dans Menu builder, builder, faire drag and drop pour placer un élément là où on veut.
+
+    Je cache les id dans le BREAD de chaque entité
+
+Etapes : Galerie d’images
+
+    Ajoute d’un colonne(migrations) dans notre table produit :
+    php artisan make :migration add_images_to_products_table –table=products
+    
+    Puis la logique de création de la colonne et de la drop au cas où on fera de rollback
+    Enfin Php artisan migrate
+    
+    
+----------------END-----------------------------
+
+
+
+
 
 
 
