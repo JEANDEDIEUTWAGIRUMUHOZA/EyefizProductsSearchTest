@@ -1,4 +1,4 @@
-PROJET TEST LARAVEL BARRE DE RECHERCHE PRODUITS 
+LARAVEL BARRE DE RECHERCHE PRODUITS 
 
 
 AVANCEMENT DU PROJET
@@ -135,7 +135,7 @@ Etape : administration avec Voyager
 
  Dans Voyager dashboard
  
-    BREAD : CRUD avec Voyager, on ajoute bread pour chaque entité, une icône, ouis on peut passer sur l’étape de création de relationship.
+    BREAD : CRUD avec Voyager, on ajoute bread pour chaque entité, une icône, ou  on peut passer sur l’étape de création de relationship.
 
     Editer side bar(des tools..) : aller dans Menu builder, builder, faire drag and drop pour placer un élément là où on veut.
 
